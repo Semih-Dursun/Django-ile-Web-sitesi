@@ -6,13 +6,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Semih fitness</title>
+  <title>Semih Fitness</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="static/assets/img/favicon.png" rel="icon">
-  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -29,12 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="static/assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Gp - v4.9.1
-  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
 </head>
 
 <body>
@@ -43,35 +37,47 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="/">Semih fitness<span>.</
-        span></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="/">SEMIH FITNESS<span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-       <a href="index.html" class="logo me-auto me-lg-0"><img 
-      src="static/assets/img/logo.png" alt="" class="img-fluid"></a>
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
           <li><a class="nav-link scrollto" href="/about">About</a></li>
           <li><a class="nav-link scrollto" href="/services">Services</a></li>
-          <li><a class="nav-link scrollto " href="/gallery">gallery</a></li>
-          <li><a class="nav-link scrollto" href="/contact">concant</a></li>
-          <li class="dropdown"><a href="#"><span>Membership</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto " href="/gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Enroll</a></li>
-              
+              <li><a href="/join">Enroll</a></li>
+             
               <li><a href="#">Workouts</a></li>
-              <li><a href="#">Tracker</a></li>
-              <li><a href="#">View profile</a></li>
+
+              <li><a href="/profile">View Profile</a></li>
             </ul>
           </li>
+
+          {% if not request.user.is_authenticated %}
+
           <li><a class="nav-link scrollto" href="/signup">Signin</a></li>
+         {% else %}
+         <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+
+
+         {% endif %}
+
+
+
+
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="/achivements" class="get-started-btn scrollto">Gym Awards</a>
-
+      {% if  request.user.is_authenticated %}
+      <a href="/" class="get-started-btn scrollto">Welcome</a>
+      {% endif %}
     </div>
   </header><!-- End Header -->
 
@@ -81,9 +87,8 @@
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
-          <h1>Asla pes etme SEMIH FITNESS ile fit kal<span>.</span></h1>
-          <h2>Vücudunuza iyi bakin, yaşamak zorunda olduğunuz tek yer orasidir </h2>  
-
+          <h1>Asla pes etme SEMIH FITNESS ile fit kal <span>.</span></h1>
+          <h2>Vücudunuza iyi bakin, yaşamak zorunda olduğunuz tek yer orasidir </h2>
         </div>
       </div>
 
@@ -91,31 +96,31 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-store-line"></i>
-            <h3><a href="">Lorem Ipsum</a></h3>
+            <h3><a href="">Biceps | Triceps</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Dolor Sitema</a></h3>
+            <h3><a href="">Back</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Sedare Perspiciatis</a></h3>
+            <h3><a href="">Shoulders</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Magni Dolores</a></h3>
+            <h3><a href="">Chest</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="">Nemos Enimade</a></h3>
+            <h3><a href="">Legs</a></h3>
           </div>
         </div>
       </div>
@@ -134,7 +139,7 @@
             <img src="static/assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>Taşı delen suyun gücü değil, damlaların sürekliliğidir.</h3>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
@@ -184,23 +189,23 @@
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+              <h4>zor iş</h4>
+              <p>Bunlar, bu emeklere eşit bir şeyin sonucu ya da bir bakıma, bazılarının dışında</p>
             </div>
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-cube-alt"></i>
-              <h4>Harum esse qui</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+              <h4>Bunlardan kim</h4>
+              <p>Şehvetleri körelmedikçe ortaya çıkmazlar, vazifelerini terk edenler kusurludur.</p>
             </div>
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-images"></i>
-              <h4>Aut occaecati</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+              <h4>Ya da karartılmış</h4>
+              <p>Ya kimseyle almaz, ya da herkesle. Yaşlıların yaptığı tüm acılar</p>
             </div>
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-shield"></i>
-              <h4>Beatae veritatis</h4>
-              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+              <h4>kutsanmış gerçeğin</h4>
+              <p>Gerçeğin çarelerinin, yaşam antlaşmalarının övgüleri sırasında hiçbir önemi yoktur.</p>
             </div>
           </div>
         </div>
@@ -213,8 +218,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Check our Services</p>
+          <h2>Hizmetler</h2>
+          <p>Hizmetlerimizi kontrol edin</p>
         </div>
 
         <div class="row">
@@ -222,31 +227,31 @@
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <p>Zevklerini yumuşatan, bozanlara ne acılar, ne sıkıntılar çekilecek.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <h4><a href="">Ama gözlemlediğiniz gibi</a></h4>
+              <p>Zevk içinde kınamada şüphe veya küskünlük acıdan kıl olmak ister</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <h4><a href="">Büyük Acılar</a></h4>
+              <p>Şehvetle kör olmadıkça ortaya çıkmazlar, görevini yapanlar kusurludur.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <h4><a href="">Kimse</a></h4>
+              <p>Ama gerçekte ikimiz de pohpohlanmaya layık olanları suçluyoruz ve onlara sadece nefretle liderlik ediyoruz.</p>
             </div>
           </div>
 
@@ -285,9 +290,7 @@
     </section><!-- End Cta Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    
-
-
+   
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
